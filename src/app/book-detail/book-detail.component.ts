@@ -12,6 +12,7 @@ export class BookDetailComponent implements OnInit {
   title='Detalle de libro'
   book?: Book 
   index: number = 0
+  registeredDate?: Date
 
   constructor(
     private router: Router,
@@ -22,6 +23,7 @@ export class BookDetailComponent implements OnInit {
   ngOnInit(): void {
     this.index = this.route.snapshot.params['id']
     this.book=this.bookService.getBookByIndex(this.index)
+    this.registeredDate= new Date(this.book?.registeredDate ?? '')
   }
 
   navigateHome(){

@@ -15,6 +15,7 @@ export class BookRegistrationComponent {
   inputGenre: string = ""
   inputYear: number = 0
   inputDescription: string = ""
+  inputPrice?: number
 
   constructor(
     private alertService: AlertService,
@@ -22,12 +23,15 @@ export class BookRegistrationComponent {
   ){}
 
   addBook(){
+    const registeredDate = new Date().toString()
     const newBook = new Book(
       this.inputName,
       this.inputAuthor,
       this.inputGenre,
       this.inputYear,
-      this.inputDescription
+      this.inputDescription,
+      this.inputPrice,
+      registeredDate
     )
     this.bookService.createBook(newBook)
     this.alertService.showAlert("Se ha creado un nuevo libro: "+newBook.name)

@@ -10,7 +10,9 @@ export class Book {
     author: string,
     genre: string,
     publishedYear: number,
-    description: string 
+    description: string,
+    public price?: number,
+    public registeredDate?: string 
   ){
     this.name = name
     this.author = author

@@ -5,6 +5,8 @@
   <p>Género: {{book?.genre}}</p>
   <p>Año Publicación: {{book?.publishedYear}}</p>
   <p>Descripción: {{book?.description}}</p>
+  <p>Precio: {{ book?.price | currency: 'CAD':'symbol' }}</p>
+  <p>Fecha de Registro: {{ registeredDate | date }}</p>
 </div>
 
 <button 
