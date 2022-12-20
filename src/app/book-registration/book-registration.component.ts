@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { Book } from '../models/book.model'
 import { AlertService } from '../services/alert.service'
 import { BookService } from '../services/book.service'

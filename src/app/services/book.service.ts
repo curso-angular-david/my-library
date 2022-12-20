@@ -9,15 +9,15 @@ export class BookService {
   books: Book[] = []
   selectedBook: Book = this.books[0]
 
-  constructor(private dataService: DataService) { 
-    this.dataService.getBooks().subscribe(
-      response => this.books = Object.values(response)
-    )
-  }
+  constructor(private dataService: DataService) { }
 
   createBook(newBook: Book) {
-    this.books.push(newBook)
-    this.dataService.saveBooks(this.books)
+    this.dataService.getBooks().subscribe(
+      response => {
+        const booksLenght = Object.values(response).length
+        this.dataService.updateBook(booksLenght, newBook)
+      }
+    )
     //this.logger.log("Se ha creado un libro!")
   }
 
