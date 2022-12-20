@@ -7,7 +7,8 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookRegistrationComponent } from './book-registration/book-registration.component';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { BookUpdateComponent } from './book-update/book-update.component'
 
 const routes: Routes = [
   { path: '', component: BookListComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
     BookListComponent,
     BookDetailComponent,
     BookRegistrationComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BookUpdateComponent
   ],
   imports: [
     BrowserModule,

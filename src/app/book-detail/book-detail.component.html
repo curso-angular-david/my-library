@@ -9,6 +9,10 @@
   <p>Fecha de Registro: {{ registeredDate | date }}</p>
 </div>
 
+<div>
+  <app-book-update [index]="index"></app-book-update>
+</div>
+
 <button 
   class="btn btn-primary"
   (click)="navigateHome()"

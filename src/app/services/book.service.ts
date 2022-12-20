@@ -30,6 +30,11 @@ export class BookService {
   }
 
   getBookByIndex(index: number){
-    return this.books[index]
+    return this.dataService.getBook(index)
+    //return this.books[index]
+  }
+
+  updateBook(index: number, book: Book){
+    this.dataService.updateBook(index, book)
   }
 }

@@ -23,4 +23,16 @@ export class DataService {
   getBooks(){
     return this.httpClient.get(URLhost+'/data.json')
   }
+
+  updateBook(id: number, book: Book){
+    this.httpClient
+      .put(URLhost+'/data/'+id+'.json', book)
+      .subscribe(
+        response => console.log(response)
+      )
+  }
+
+  getBook(id: number){
+    return this.httpClient.get(URLhost+'/data/'+id+'.json')
+  }
 }
